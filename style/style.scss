@@ -3,26 +3,27 @@
 
 body {
   background-color: #e7f3f7;
+  user-select: none;
 }
 
 .page {
   display: grid;
   grid-template-columns: 300px 1fr;
-  height: calc(100% - 200px);
   font-size: 20px;
   padding: 0px 20px 0px 20px;
   grid-template-areas: 
   "buttons descr";
 
-  h1 {  // header and footer
+  h1 {  // content labels
     font-size: 30px;
     margin: 30px 10px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
+    font-family: 'Poppins', sans-serif;
   }
 
-  h2 {  // content labels
+  h2 {  // nav label
     text-align: center;
     font-size: 25px;
     text-decoration: underline;
