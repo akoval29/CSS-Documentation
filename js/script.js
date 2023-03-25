@@ -1,6 +1,7 @@
 "use strict";
 
-const menuLinks = document.querySelectorAll('.page__content__button[data-goto]');
+// Скролим сторінку до потрібного місця в тексті
+const menuLinks = document.querySelectorAll('.page__1__btn[data-goto]');
 if (menuLinks.length > 0) {
   menuLinks.forEach(menuLink => {
     menuLink.addEventListener("click", onMenuLinkClick);
