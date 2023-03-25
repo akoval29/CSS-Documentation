@@ -1,17 +1,18 @@
 @import url(normalize.css);
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
 body {
-  background-color: #edf7fa;
+  background-color: #e7f3f7;
 }
 
 .page {
   display: grid;
   grid-template-columns: 300px 1fr;
-  grid-row: 1fr;
-  grid-column-gap: 15px;
+  grid-row: 100px 1fr 100px;
+  grid-column-gap: 5px;
+  height: calc(100% - 200px);
   font-size: 20px;
   padding: 0px 20px 0px 20px;
-  grid-template-areas: "buttons descr";
+  grid-template-areas: "header header" "buttons descr" "footer footer";
 }
 .page h1 {
   font-size: 30px;
@@ -31,13 +32,19 @@ body {
 }
 .page__1 {
   grid-area: buttons;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
   height: 100%;
+  top: 0%;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(to right, #ffffff, #d1dff0);
   padding: 20px;
+  z-index: 1;
 }
 .page__1__btn {
-  height: 30px;
+  height: 3.4%;
   width: 100%;
   background-color: #00c6ff;
   color: azure;
@@ -64,9 +71,9 @@ body {
   overflow-y: scroll;
 }
 
-.header,
-.footer {
+.header, .footer {
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
   height: 60px;
@@ -76,6 +83,12 @@ body {
   color: azure;
   font-size: 15px;
   margin: 20px;
+  z-index: 10;
+  position: relative;
+}
+
+.header {
+  top: 0;
 }
 
 .footer {
