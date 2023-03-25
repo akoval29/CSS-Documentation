@@ -71,7 +71,6 @@ body {
   padding: 20px;
   background: linear-gradient(to right, #d1dff0, #ffffff, #d1dff0);
   color: black;
-  overflow-y: scroll;
 }
 
 .header, .footer {
