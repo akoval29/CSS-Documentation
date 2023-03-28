@@ -1,35 +1,25 @@
 "use strict";
 
-// Скролим сторінку до потрібного місця в тексті + музикальні ефекти
-const menuLinks = document.querySelectorAll('.page__1__btn[data-goto]');
-const hoverSound = new Audio('src/bip.ogg'); // muz
+// цей скріпт продивляється весь код на предмет div, в яких є id
+// (впринципі існує id). Потім він генерує елементи з тегом <a>, 
+// яким присвоює href із value (getAttribute) тих id, які він знайшов, 
+// це для прокрутки до самих елементів. Ну і звук кліка на <a>
+// enjoy !!!!!!
+
 const clickSound = new Audio('src/bup.ogg'); // muz
+const divs = document.querySelectorAll('[id]'); // знаходимо ВСІ div, які мають id
+const navEl = document.querySelector('.page__1'); // знаходимо секцію куди будем генерувати <a>
+for (let i = 0; i < divs.length; i++) {
+  const id = divs[i].getAttribute('id'); // забираєм attribute
 
-if (menuLinks.length > 0) {
-  menuLinks.forEach(menuLink => {
+  const a = document.createElement('a');
+  a.setAttribute('href', `#${id}`); // вставляєм attribute в href
+  a.textContent = `Display: ${id}`;
 
-    menuLink.addEventListener("mouseover", function () { // звук ховера
-      hoverSound.currentTime = 0;
-      hoverSound.play();
-    });
-
-    menuLink.addEventListener("click", onMenuLinkClick);
+  a.addEventListener("click", () => { // накидуєм звук кліка
+    clickSound.currentTime = 0;
+    clickSound.play();
   });
 
-  function onMenuLinkClick(e) {
-    const menuLink = e.target;
-    if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-      const gotoBlock = document.querySelector(menuLink.dataset.goto);
-      const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY
-
-      clickSound.currentTime = 0;
-      clickSound.play(); // звук кліка
-
-      window.scrollTo({
-        top: gotoBlockValue,
-        behavior: "smooth"
-      });
-      e.preventDefault();
-    }
-  }
+  navEl.appendChild(a);
 }
