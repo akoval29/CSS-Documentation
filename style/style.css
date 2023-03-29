@@ -1,0 +1,101 @@
+@import url(normalize.css);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+body {
+  background-color: #e7f3f7;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  font-size: 20px;
+  padding: 0px 20px 0px 20px;
+  grid-template-areas: "buttons descr";
+}
+.page h1 {
+  font-size: 30px;
+  margin: 30px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: "Poppins", sans-serif;
+}
+.page h2 {
+  text-align: center;
+  font-size: 25px;
+  text-decoration: underline;
+  font-family: "Poppins", sans-serif;
+}
+.page p {
+  margin: 20px;
+}
+.page__1 {
+  grid-area: buttons;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+  top: 0%;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #ffffff, #d1dff0);
+  padding: 20px;
+  z-index: 1;
+}
+.page__1 > a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  height: 3.5%;
+  width: 100%;
+  background: linear-gradient(to right, #69d5f3, #00a0cc);
+  color: azure;
+  font-size: 18px;
+  border-radius: 10px;
+  margin: 0px 0px 5px 0px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.page__1 > a:hover {
+  background-color: #0072ff;
+  transform: scale(1.1);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.page__1 > a:active {
+  background-color: #0850a7;
+}
+.page__2 {
+  grid-area: descr;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to right, #d1dff0, #ffffff, #d1dff0);
+  color: black;
+}
+
+.header, .footer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin: 20px;
+  letter-spacing: 3px;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: azure;
+  font-size: 15px;
+  z-index: 10;
+}
+
+.header {
+  top: 0;
+}
+
+.footer {
+  bottom: 0;
+}/*# sourceMappingURL=style.css.map */
