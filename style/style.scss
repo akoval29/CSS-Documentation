@@ -1,9 +1,15 @@
 @import url(normalize.css);
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
+  position: relative;
   background-color: #e7f3f7;
   user-select: none;
+  padding-top: 60px;
 }
 
 .page {
@@ -11,26 +17,28 @@ body {
   grid-template-columns: 300px 1fr;
   font-size: 20px;
   padding: 0px 20px 0px 20px;
-  grid-template-areas: 
-  "buttons descr";
+  grid-template-areas: "buttons descr";
 
-  h1 {  // content labels
+  h1 {
+    // content labels
     font-size: 30px;
     margin: 30px 10px;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 
-  h2 {  // nav label
+  h2 {
+    // nav label
     text-align: center;
     font-size: 25px;
     text-decoration: underline;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
   }
 
-  p {  // content
+  p {
+    // content
     margin: 20px;
   }
 
@@ -40,24 +48,24 @@ body {
     flex-direction: column;
     position: fixed;
     height: 100%;
-    top: 0%; 
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background: linear-gradient(to right, #ffffff, #d1dff0);
-    padding: 20px;
+    padding: 40px 20px 20px 20px;
     z-index: 1;
-    > a {  // "buttons"
+    > a {
+      // "buttons"
       display: flex;
       justify-content: center;
       text-decoration: none;
-      align-items:center;
+      align-items: center;
       height: 3.5%;
       width: 100%;
-      background: linear-gradient(to right, #69d5f3, #00a0cc); ;
+      background: linear-gradient(to right, #69d5f3, #00a0cc);
       color: azure;
       font-size: 18px;
       border-radius: 10px;
-      margin: 0px 0px 5px 0px ;
+      margin: 0px 0px 5px 0px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
       &:hover {
@@ -81,24 +89,26 @@ body {
   }
 }
 
-.header, .footer {
+.header,
+.footer {
   display: flex;
   position: relative;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   height: 60px;
   margin: 20px;
   letter-spacing: 3px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: linear-gradient(to right, #00c6ff, #0072ff);
-  color:azure;
+  color: azure;
   font-size: 15px;
   z-index: 10;
 }
 .header {
+  position: fixed;
+  width: 100%;
   top: 0;
 }
 .footer {
   bottom: 0;
 }
-
